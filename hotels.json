@@ -1,0 +1,402 @@
+[
+  {
+    "name": "Apartment Li",
+    "address": "11 Ulica Borgo",
+    "city": "Tar",
+    "country": "Croatia",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/165897655.jpg?k=03909b20827138b65521a29b72f86ea86d47ce18d229b563e4f203a04285ceda&o=",
+    "price_eur": 47.50
+  },
+  {
+    "name": "Kourtis",
+    "address": "Karioti",
+    "city": "Paramythia",
+    "country": "Greece",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/45395813.jpg?k=fb4e8434ad6d1fc3a6ce6898252a6c6737099b6077f6615a54101adcb9e2c3a3&o=",
+    "price_eur": 40.50
+  },
+  {
+    "name": "St. Peter's Relax",
+    "address": "Via Santamaura 86",
+    "city": "Rome",
+    "country": "Italy",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/157165270.jpg?k=39657ad0c4bf62a547fe77056a5910386a0e6b14fa1afa802791bb61038e700e&o=",
+    "price_eur": 72.80
+  },
+  {
+    "name": "Loft del Borgo",
+    "address": "6 Via del Medico",
+    "city": "Palermo",
+    "country": "Italy",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/320838966.jpg?k=c2c980f17ede0be7c21b7ca4da8cb81366551c9eb61767777faec6a9f0a89612&o=",
+    "price_eur": 60.71
+  },
+  {
+    "name": "Il Mandarino Rooms & Apartments",
+    "address": "34 Via Martiri di Belfiore",
+    "city": "Cittadella del Capo",
+    "country": "Italy",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/297783503.jpg?k=ed317c2929028ca7919762e718b782ed11b0dd51a7480fa5f66a1bf640a4e708&o=",
+    "price_eur": 47.03
+  },
+  {
+    "name": "Rainbow Suite",
+    "address": "via Enrico de Nicola 70",
+    "city": "Cassino",
+    "country": "Italy",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/170460037.jpg?k=b75cefc196344f843c86f8d5686d2ecb400cfc9294a7899b744f8432ed78a43f&o=",
+    "price_eur": 72.00
+  },
+  {
+    "name": "ARIEL B&B",
+    "address": "12 Vico Papa 12, scala unica. 2° piano",
+    "city": "Naples",
+    "country": "Italy",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/172092100.jpg?k=fbea59a697f97e57d015c9416c607fed69726bb2cc88f4e0e23c033916560bc3&o=",
+    "price_eur": 65.66
+  },
+  {
+    "name": "Dunmore Gardens",
+    "address": "Carrigans, Lifford, Co.Donegal Dunmore Gardens",
+    "city": "Carrigans",
+    "country": "Ireland",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/132620056.jpg?k=37b25748820b00ef3f05809ead5c02a3ae512dab7a128a675e8eeff8b35c2208&o=",
+    "price_eur": 105.17
+  },
+  {
+    "name": "Hotel Rural Vilaflor",
+    "address": "Dolores, 20",
+    "city": "Vilaflor",
+    "country": "Spain",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/307459118.jpg?k=0d71ab8d12b2b02655979c37193fbcfc6410d4a57f76a9c4d14afb97b75752cd&o=",
+    "price_eur": 42.75
+  },
+  {
+    "name": "Novotel Metz Amnéville",
+    "address": "16 route de Maizieres les metz",
+    "city": "Maizières-lès-Metz",
+    "country": "France",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/304349538.jpg?k=2badf496419d90acc6443dd9c98e9af6812ae94dee567a2f263a1c966701995b&o=",
+    "price_eur": 99.06
+  },
+  {
+    "name": "The George at Nunney",
+    "address": "Church Street, Nunney",
+    "city": "Frome",
+    "country": "United Kingdom",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/206691623.jpg?k=812daf7970c126cab92d61419d3fce8aa3166a834b40917147aecb23ce9d5a5a&o=",
+    "price_eur": 126.10
+  },
+  {
+    "name": "Nadia Hotel",
+    "address": "Raadhuisstraat 51",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/12622008.jpg?k=ba5bd49bbf7ae3435634d58c23743dd48c0f9f4d592e39117b6e4d622e1f6524&o=",
+    "price_eur": 133.39
+  },
+  {
+    "name": "Creo München Süd",
+    "address": "Meglingerstraße 41",
+    "city": "Munich",
+    "country": "Germany",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/345974121.jpg?k=8e60f4b9ec6564bdcf9dc07c4c7089aaf3c4552b1bdf4d60c32ee0504b62e718&o=",
+    "price_eur": 59.00
+  },
+  {
+    "name": "Ai Frutti Di Una Volta Room&Breakfast",
+    "address": "Via Valdicuore 14",
+    "city": "Ferrara",
+    "country": "Italy",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/266321722.jpg?k=0277f661d0decdb4dce8dc87fb19be2f1881397c4561df6a9349c42ceb429c86&o=",
+    "price_eur": 71.40
+  },
+  {
+    "name": "Art Nouveau Hotel am Kurfürstendamm",
+    "address": "Leibnizstraße 59",
+    "city": "Berlin",
+    "country": "Germany",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/157450267.jpg?k=4fb47575f1b9c2523392466bbde7c8352d6b124afcb602aff2e604a9e352b59e&o=",
+    "price_eur": 87.72
+  },
+  {
+    "name": "Residencial Avenida",
+    "address": "Rua da Barqueta, nº 21",
+    "city": "Faro",
+    "country": "Portugal",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/338882659.jpg?k=e6e37673530b1cb130f6e070dca43dfda80e199701c03ea79ef5a9281d2d62b4&o=",
+    "price_eur": 71.59
+  },
+  {
+    "name": "Les Clarisses Boutique Hotel",
+    "address": "Plaça de Malla",
+    "city": "Vic",
+    "country": "Spain",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/161154005.jpg?k=097ffeeaa140e7f9af1ee24dc5b02c418a3c321a3b0de12d14f877e6040796af&o=",
+    "price_eur": 139.30
+  },
+  {
+    "name": "Novotel Phuket Vintage Park Resort - SHA Plus",
+    "address": "89 Rat-U-Thit 200 Pee Phuket",
+    "city": "Patong Beach",
+    "country": "Thailand",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/308165367.jpg?k=b26bfa83252599f9578d0ff92da2e9b3312cffed3d52d95b656f33756d9b1fe0&o=",
+    "price_eur": 54.05
+  },
+  {
+    "name": "Hotel Cantaleone",
+    "address": "Via Tonale 23",
+    "city": "San Michele allʼAdige",
+    "country": "Italy",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/38190907.jpg?k=54b3fff4977afe249496c66a15f657d1e255986e61d2f1c81f06b6c50c2ef8fb&o=",
+    "price_eur": 73.20
+  },
+  {
+    "name": "Casa de lîngâ Pâdure",
+    "address": "Comuna Cocorastii-Mislii Sat Goruna Srada Dumnbravei Nr 196",
+    "city": "Campina",
+    "country": "Romania",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/342964552.jpg?k=d0afcff51f8af12731e8517f8f82bca2dd8fd68c718e06b938e8dc764f761b71&o=",
+    "price_eur": 20.27
+  },
+  {
+    "name": "Caudry : Appartement spacieux plein centre",
+    "address": "33 Rue Roger Salengro",
+    "city": "Caudry",
+    "country": "France",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/242365247.jpg?k=9f014d0da38419155f311f2df38dbb45bdcde3bcf77fe86589b8b5f613a3b7bf&o=",
+    "price_eur": 52.25
+  },
+  {
+    "name": "Impero Vaticano San Pietro",
+    "address": "Via Aurelia 36",
+    "city": "Rome",
+    "country": "Italy",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/39107176.jpg?k=7c0c05e545245bff770017e4215a58f77a619b6619dce5b714868b6b523bcda3&o=",
+    "price_eur": 91.08
+  },
+  {
+    "name": "Hotel Porto Di Roma",
+    "address": "Via Montegrappa 27",
+    "city": "Civitavecchia",
+    "country": "Italy",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/314814619.jpg?k=940ed00d545b42b07837edac816e1f5a07d6e4b6f473f09fb6d99ee0bbd27653&o=",
+    "price_eur": 70.10
+  },
+  {
+    "name": "Privat Apartment",
+    "address": "26 Ernst-Thälmann-Straße",
+    "city": "Schkeuditz",
+    "country": "Germany",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/328078991.jpg?k=991fb96211fc838bd86759563c0e0760b0be3bd4117544ffbb807335a048cea0&o=",
+    "price_eur": 62.00
+  },
+  {
+    "name": "LE VIE DEL BAROCCO",
+    "address": "32 Via Orfanelli",
+    "city": "Catania",
+    "country": "Italy",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/299981270.jpg?k=26a74f759cbd9072cfc819391affff65488fb71a8bff879b38f6266f20424648&o=",
+    "price_eur": 77.10
+  },
+  {
+    "name": "Hôtel le Vascon",
+    "address": "15 Place de la Fontaine Chaude",
+    "city": "Dax",
+    "country": "France",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/256410590.jpg?k=4069c492c25936a4c49c296e1f1a148fd09e9626f191546436f5bbcb5cea8a2c&o=",
+    "price_eur": 57.00
+  },
+  {
+    "name": "Hostal Rosa",
+    "address": "Quintana 46, 1º",
+    "city": "Villajoyosa",
+    "country": "Spain",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/265232953.jpg?k=a50fc7b2f3a3eedfbafa495b47422f405b37198932ef8e42699b591f3ca3f1dd&o=",
+    "price_eur": 48.00
+  },
+  {
+    "name": "Stonehouse Villa Skopi",
+    "address": "Skopi",
+    "city": "Skopí",
+    "country": "Greece",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/263775658.jpg?k=042168cbfc7fe9f4be76ae17b56b50b610bdde842599e5c7294e1f099de6b8b1&o=",
+    "price_eur": 42.75
+  },
+  {
+    "name": "Let me Athens you!",
+    "address": "19Γ Aiolou",
+    "city": "Athens",
+    "country": "Greece",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/162953735.jpg?k=ec6cc098a78c1352c6fcce5712674d88e2cfade6e0fb703a81079382657de2d9&o=",
+    "price_eur": 103.13
+  },
+  {
+    "name": "447 SUITS",
+    "address": "Brunac ulica 85",
+    "city": "Vodice",
+    "country": "Croatia",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/119933703.jpg?k=24c8625af34c17f29b423d61482755932a894785981b4f6ec2d776c60ceffe34&o=",
+    "price_eur": 38.00
+  },
+  {
+    "name": "Sole Miami, A Noble House Resort",
+    "address": "17315 Collins Avenue",
+    "city": "Sunny Isles Beach",
+    "country": "United States",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/231410339.jpg?k=9b9f7bad5828ae32d886c747c7ab669803823fce4d19e8495dc5d000066ffe49&o=",
+    "price_eur": 474.82
+  },
+  {
+    "name": "Miraval Luxury Rooms",
+    "address": "Ulica Petra Zoranica 2",
+    "city": "Split",
+    "country": "Croatia",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/148208400.jpg?k=4dfe5be5f296674e4420aeca50be1bc12c020c78e20ed169e0cdef4e79f4eaf2&o=",
+    "price_eur": 67.50
+  },
+  {
+    "name": "La Bella Balla-rò",
+    "address": "7 Via Torino",
+    "city": "Palermo",
+    "country": "Italy",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/113601506.jpg?k=34f93f6b346ccb1b203b7cbd876ee1b77b3eb7a504b2496e49b77aab8c9f367f&o=",
+    "price_eur": 58.00
+  },
+  {
+    "name": "Locazione Turistica Montefalco",
+    "address": "Via Montefalco, 38",
+    "city": "Arezzo",
+    "country": "Italy",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/99795631.jpg?k=8e1c14d4612990018e49653b169897403f3dc32268e0ad6578ce59efc2819754&o=",
+    "price_eur": 48.60
+  },
+  {
+    "name": "RANI BEACH MALDIVES",
+    "address": "Halaveli Magu Plot#10135",
+    "city": "Hulhumale",
+    "country": "Maldives",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/226351973.jpg?k=99bdc4b8ba8d74de57caddf788ad6e9f75680d1851af6cdc07b1f1049ba43716&o=",
+    "price_eur": 38.35
+  },
+  {
+    "name": "Hotel Pension Waizenegger am Kurfürstendamm",
+    "address": "Mommsenstr. 6",
+    "city": "Berlin",
+    "country": "Germany",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/92345959.jpg?k=1f7e5c4232812b368aeb049b92894cb4b8eeb0d717f8415931eca690f3bf75d0&o=",
+    "price_eur": 54.90
+  },
+  {
+    "name": "Hotel Grand Pacific (SG Clean)",
+    "address": "101 Victoria Street",
+    "city": "Singapore",
+    "country": "Singapore",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/55361416.jpg?k=45a31bf6f00b6cec5cbd4fd6ebc8ad87b07c69dc1449a0bc154629e77dcb1c9b&o=",
+    "price_eur": 91.18
+  },
+  {
+    "name": "d.Five Riverside Deluxe Apartment",
+    "address": "Belgrád rakpart 26.",
+    "city": "Budapest",
+    "country": "Hungary",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/155918808.jpg?k=f05396b113b3760155e47f784b4f885fd13df0438eee800a0e628bf60be5c91e&o=",
+    "price_eur": 89.13
+  },
+  {
+    "name": "Royal Phuket City Hotel - SHA Extra Plus",
+    "address": "154 Phang Nga Rd, Muang",
+    "city": "Phuket Town",
+    "country": "Thailand",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/313646961.jpg?k=49d5fb54c8d79795699f5b85d63d006a5231d957bffc29776849edbdfe934b87&o=",
+    "price_eur": 30.04
+  },
+  {
+    "name": "Punta del Este Golden Beach Apart Hotel",
+    "address": "Punta Del Este",
+    "city": "Punta del Este",
+    "country": "Uruguay",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/331216438.jpg?k=6f05075c8de78a3408884c9346607f739e0b529a6696169de97cea0ee296673c&o=",
+    "price_eur": 173.48
+  },
+  {
+    "name": "Residencial do Areeiro",
+    "address": "Praça Francisco Sá Carneiro, 4",
+    "city": "Lisbon",
+    "country": "Portugal",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/257579061.jpg?k=0b34f0dd4f81bdef3a023009910f6793d76a987bc46b80589f50b89fe63b10bf&o=",
+    "price_eur": 64.00
+  },
+  {
+    "name": "Premiere Classe Metz Sud Jouy Aux Arches",
+    "address": "Zone Actisud St Jean",
+    "city": "Jouy-aux-Arches",
+    "country": "France",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/233836406.jpg?k=daa2ad707f55a20c5332ab5d70bd24a8f517bc0da3d2c1a3584027aba88e84b1&o=",
+    "price_eur": 40.66
+  },
+  {
+    "name": "Plazuela del Carbón Suites",
+    "address": "15 Plaza de España",
+    "city": "Cádiz",
+    "country": "Spain",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/273750292.jpg?k=6f0ea67be39f8148c93b03bc0632f9cface4fa215122f166e88a8d0844533bbd&o=",
+    "price_eur": 235.60
+  },
+  {
+    "name": "Gyongyver Panzio",
+    "address": "Strada Mikes Kelemen nr. 33",
+    "city": "Sfântu-Gheorghe",
+    "country": "Romania",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/308004358.jpg?k=48a8dba042cace3c8cfebf4640e2d195f23b4fa24030c269fce0baa95c18aa22&o=",
+    "price_eur": 28.37
+  },
+  {
+    "name": "Ducassi Rooftop Pool & Beach Club",
+    "address": "Calle Aruba",
+    "city": "Punta Cana",
+    "country": "Dominican Republic",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/253181962.jpg?k=65c0978711c3cc30d7f119cfd95419f8d4c686f5d8f62fa596895d7713ab0184&o=",
+    "price_eur": 89.93
+  },
+  {
+    "name": "The First Ottoman Mansion",
+    "address": "Kucuk Ayasofya Mahallesi Şehsuvarbey Sokak No:24,Fatih",
+    "city": "Istanbul",
+    "country": "Turkey",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/143920298.jpg?k=1134cf40534adcea0b271c20dacaa391bc7729744e9d2b6c4dc9bad91728076d&o=",
+    "price_eur": 48.43
+  },
+  {
+    "name": "INNit Rooms - SaltWater Guest House",
+    "address": "9 Madeira Place",
+    "city": "Brighton & Hove",
+    "country": "United Kingdom",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/308278293.jpg?k=3e45c9bc939041e630fe7a71447792f931f8fd6a01d58e46fd69d3799575f830&o=",
+    "price_eur": 127.30
+  },
+  {
+    "name": "Villa Margarita",
+    "address": "Urbanização das Areias dos Moinhos, Lotenº 70",
+    "city": "Carvoeiro",
+    "country": "Portugal",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/284291015.jpg?k=06ce54d8ec000881fb495d2c6584a84163b4bdbcbec42c67d57e8355ebc43c4e&o=",
+    "price_eur": 1430.00
+  },
+  {
+    "name": "Absolut City Hostel",
+    "address": "Károly körút 13.",
+    "city": "Budapest",
+    "country": "Hungary",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/328585362.jpg?k=c07a7ff3fcc44daacae73cadd5f79ca9dbfb6760c9b97a9933e12eb836f1b08c&o=",
+    "price_eur": 49.83
+  },
+  {
+    "name": "Happy Holiday Cascais",
+    "address": "Avenida Marginal 9305, 1º Dt",
+    "city": "Cascais",
+    "country": "Portugal",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/1440x1440/332210982.jpg?k=b6da4f69c1040ba6c4838eac997eadc75bc80c373fe653569500284cd8ba1592&o=",
+    "price_eur": 177.00
+  }
+]
