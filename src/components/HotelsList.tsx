@@ -1,7 +1,7 @@
 import { useState, useEffect, FC } from 'react';
 import HotelCard from './Reusables/HotelCard';
 import { makeStyles } from '@mui/styles';
-import { Box, Grid, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { HotelData } from 'pages/Landing';
 
 export interface Props {
@@ -22,7 +22,7 @@ const HotelsList: FC<Props> = ({ hotels, loading }) => {
   const classes = useStyles();
 
   return (
-    <Grid className={classes.container}>
+    <Box className={classes.container}>
       {hotels.length > 0 ? (
         hotels.map((hotel) => <HotelCard key={hotel.name} hotel={hotel} />)
       ) : loading ? (
@@ -36,7 +36,7 @@ const HotelsList: FC<Props> = ({ hotels, loading }) => {
           There are no hotels found based on your search phrase. Please try again.
         </Typography>
       )}
-    </Grid>
+    </Box>
   );
 };
 

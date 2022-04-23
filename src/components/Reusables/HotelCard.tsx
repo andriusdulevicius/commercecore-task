@@ -1,7 +1,7 @@
-import { FC, useState, useEffect } from 'react';
+import { FC, useState } from 'react';
 import { HotelData } from '../../pages/Landing';
-import { Paper, Grid, Box, Typography, Link } from '@mui/material';
-import { ArrowRight } from '@material-ui/icons';
+import { Box, Typography, Link } from '@mui/material';
+import { ArrowRight, FavoriteBorderOutlined } from '@material-ui/icons';
 import { Image } from 'mui-image';
 import { makeStyles } from '@mui/styles';
 import PeriodSelector from './PeriodSelector';
@@ -15,13 +15,32 @@ interface Props {
 const useStyles = makeStyles({
   card: {
     display: 'flex',
+    position: 'relative',
     marginTop: '1rem',
     borderRadius: '1rem',
     overflow: 'hidden',
     padding: 0,
-    maxHeight: '16rem',
+    maxHeight: '15rem',
     backgroundColor: '#FFF',
   },
+  favorite: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'absolute',
+    top: '1.5rem',
+    left: '18rem',
+    padding: '0.7rem',
+    borderRadius: '50%',
+    backgroundColor: 'lightgray',
+    cursor: 'pointer',
+    transform: 'scale(1)',
+    transition: 'transform 1s ease',
+    '&:active': {
+      transform: 'scale(1.2)',
+    },
+  },
+
   skeleton: {
     backgroundColor: '#EEE',
   },
@@ -30,7 +49,7 @@ const useStyles = makeStyles({
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: '1.5rem',
-    minWidth: '65%',
+    minWidth: '62%',
   },
   flex: {
     display: 'flex',
@@ -50,6 +69,7 @@ const HotelCard: FC<Props> = ({ hotel = {}, loading }) => {
   const { name, address, city, country, image, price_eur } = hotel;
   const classes = useStyles();
   const [period, setPeriod] = useState<string>('perNight');
+  const [favorite, setFavorite] = useState<boolean>(false);
 
   const getPrice = (period: string, price_eur: number) => {
     if (period === 'perWeek') {
@@ -63,7 +83,14 @@ const HotelCard: FC<Props> = ({ hotel = {}, loading }) => {
     <Box className={`${classes.card} ${loading && classes.skeleton}`}>
       {!loading && (
         <>
-          <Image src={image} minWidth='30%' />
+          <Image src={image} style={{ minHeight: '100%' }} />
+          <Box className={classes.favorite} onClick={() => setFavorite((prevState) => !prevState)}>
+            {favorite ? (
+              <FavoriteBorderOutlined style={{ color: 'red' }} />
+            ) : (
+              <FavoriteBorderOutlined style={{ color: 'gray' }} />
+            )}
+          </Box>
           <Box className={classes.textContainer}>
             <Typography variant='h5' fontSize='1.6rem'>
               {name}
@@ -75,7 +102,7 @@ const HotelCard: FC<Props> = ({ hotel = {}, loading }) => {
             >{`${address}, ${city}, ${country}`}</Typography>
             <Ratings rating={4} />
             <Box className={classes.flex}>
-              <Typography>
+              <Box>
                 <Typography variant='caption' fontSize='1rem' className={classes.grayText}>
                   From{' '}
                 </Typography>
@@ -83,7 +110,7 @@ const HotelCard: FC<Props> = ({ hotel = {}, loading }) => {
                   ${price_eur && getPrice(period, price_eur)}
                 </Typography>
                 <PeriodSelector period={period} setPeriod={setPeriod} />
-              </Typography>
+              </Box>
               <Link href='/' color='#000' underline='none' className={classes.flex}>
                 <Typography variant='caption' style={{ textDecoration: 'none', fontSize: '1rem' }}>
                   See details
