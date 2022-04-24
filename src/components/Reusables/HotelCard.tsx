@@ -6,6 +6,7 @@ import { Image } from 'mui-image';
 import { makeStyles } from '@mui/styles';
 import PeriodSelector from './PeriodSelector';
 import { Ratings } from './Ratings';
+import { useGlobalState } from '../../context';
 
 interface Props {
   hotel?: HotelData;
@@ -20,7 +21,7 @@ const useStyles = makeStyles({
     borderRadius: '1rem',
     overflow: 'hidden',
     padding: 0,
-    maxHeight: '15rem',
+    height: '15rem',
     backgroundColor: '#FFF',
   },
   favorite: {
@@ -29,7 +30,6 @@ const useStyles = makeStyles({
     alignItems: 'center',
     position: 'absolute',
     top: '1.5rem',
-    left: '18rem',
     padding: '0.7rem',
     borderRadius: '50%',
     backgroundColor: 'lightgray',
@@ -48,12 +48,12 @@ const useStyles = makeStyles({
     flexDirection: 'column',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: '1.5rem',
-    minWidth: '62%',
+    width: '100%',
   },
   flex: {
+    justifySelf: 'baseline',
     display: 'flex',
-    alignItems: 'center',
+    alignItems: 'flex-end',
     justifyContent: 'space-between',
     paddingTop: '0.5rem',
   },
@@ -66,32 +66,63 @@ const useStyles = makeStyles({
 });
 
 const HotelCard: FC<Props> = ({ hotel = {}, loading }) => {
-  const { name, address, city, country, image, price_eur } = hotel;
+  const { name, address, city, country, image, price_eur, rating = 5 } = hotel;
   const classes = useStyles();
   const [period, setPeriod] = useState<string>('perNight');
   const [favorite, setFavorite] = useState<boolean>(false);
+  const [state, setState] = useGlobalState();
 
   const getPrice = (period: string, price_eur: number) => {
     if (period === 'perWeek') {
-      return 7 * price_eur;
+      return (7 * price_eur).toFixed(2);
     } else if (period === 'perTwoWeeks') {
-      return 14 * price_eur;
+      return (14 * price_eur).toFixed(2);
     } else return price_eur;
   };
 
+  const handleFavorites = async () => {
+    await setFavorite((prevState) => !prevState);
+    if (favorite) {
+      const newArr = [...state.favorites].push(hotel);
+      setState({ ...state, favorites: newArr });
+    }
+    if (!favorite) {
+      const newArr = state.favorites.map((favH: HotelData) => favH.name !== hotel.name);
+      setState({ ...state, favorites: newArr });
+    }
+  };
+
   return (
-    <Box className={`${classes.card} ${loading && classes.skeleton}`}>
+    <Box
+      className={`${classes.card} ${loading && classes.skeleton}`}
+      sx={{
+        flexDirection: { xs: 'column', sm: 'row' },
+        height: 'auto',
+      }}
+    >
       {!loading && (
         <>
-          <Image src={image} style={{ minHeight: '100%' }} />
-          <Box className={classes.favorite} onClick={() => setFavorite((prevState) => !prevState)}>
+          <Box
+            sx={{
+              height: { xs: '13rem', sm: '18rem' },
+              minWidth: { xs: '100%', sm: '18rem' },
+              maxWidth: { xs: '100%', sm: '18rem' },
+            }}
+          >
+            <Image src={image} />
+          </Box>
+          <Box
+            className={classes.favorite}
+            sx={{ right: { xs: '1rem', sm: '29rem', md: '43rem' } }}
+            onClick={handleFavorites}
+          >
             {favorite ? (
               <FavoriteBorderOutlined style={{ color: 'red' }} />
             ) : (
               <FavoriteBorderOutlined style={{ color: 'gray' }} />
             )}
           </Box>
-          <Box className={classes.textContainer}>
+          <Box className={classes.textContainer} sx={{ padding: { xs: '1rem', sm: '2rem 2rem 1rem 2rem' } }}>
             <Typography variant='h5' fontSize='1.6rem'>
               {name}
             </Typography>
@@ -100,7 +131,7 @@ const HotelCard: FC<Props> = ({ hotel = {}, loading }) => {
               fontSize='1rem'
               className={classes.grayText}
             >{`${address}, ${city}, ${country}`}</Typography>
-            <Ratings rating={4} />
+            <Ratings rating={rating} />
             <Box className={classes.flex}>
               <Box>
                 <Typography variant='caption' fontSize='1rem' className={classes.grayText}>
@@ -111,7 +142,7 @@ const HotelCard: FC<Props> = ({ hotel = {}, loading }) => {
                 </Typography>
                 <PeriodSelector period={period} setPeriod={setPeriod} />
               </Box>
-              <Link href='/' color='#000' underline='none' className={classes.flex}>
+              <Link href='/' color='#000' underline='none' className={classes.flex} alignItems='center'>
                 <Typography variant='caption' style={{ textDecoration: 'none', fontSize: '1rem' }}>
                   See details
                 </Typography>

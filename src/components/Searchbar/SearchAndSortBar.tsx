@@ -11,7 +11,8 @@ const useStyles = makeStyles({
     alignItems: 'center',
     justifyContent: 'center',
     flexWrap: 'nowrap',
-    gap: '2rem',
+    width: '100%',
+    maxWidth: '60rem',
   },
 });
 
@@ -57,9 +58,9 @@ const SearchAndSortBar: FC<Props> = ({ hotels, setHotels, availableHotels }) => 
   };
 
   return (
-    <Box className={classes.searchBox}>
+    <Box className={classes.searchBox} sx={{ gap: { sm: '1rem', md: '2rem' } }}>
       <SearchBar
-        style={{ width: '30rem' }}
+        style={{ width: '70%' }}
         value={searched}
         onChange={(searchVal: string) => requestSearch(searchVal)}
         onCancelSearch={() => cancelSearch()}

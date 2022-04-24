@@ -11,7 +11,7 @@ const useStyles = makeStyles({
   starContainer: {
     alignItems: 'center',
     flexWrap: 'nowrap',
-    gap: '0.3rem',
+    gap: '0.1rem',
     margin: '0.4rem 0',
     padding: '0.2rem',
     height: '1.9rem',
@@ -23,12 +23,12 @@ const useStyles = makeStyles({
 export const Ratings: React.FC<Props> = ({ rating }) => {
   const classes = useStyles();
 
-  const starWidth = rating * 1.45 + 'rem';
+  const starsWidth: string = rating * 1.6 + 'rem';
 
   return (
-    <Box className={classes.starContainer} width={starWidth}>
+    <Box className={classes.starContainer} width={starsWidth}>
       {[...Array(rating)].map((_, index: number) => (
-        <Box key={index} width='1.25rem' display='inline-block' color='white'>
+        <Box key={index} display='inline-block' color='white'>
           <Star color='inherit' />
         </Box>
       ))}

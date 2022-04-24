@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { makeStyles } from '@mui/styles';
-import { Box, Grid, Typography } from '@mui/material';
-import SearchBar from 'material-ui-search-bar';
+import { Box } from '@mui/material';
 import HotelsList from '../components/HotelsList';
 import SearchAndSortBar from 'components/Searchbar/SearchAndSortBar';
+import { useGlobalState } from 'context';
 
 export interface HotelData {
   name: string;
@@ -12,6 +12,7 @@ export interface HotelData {
   country: string;
   image: string;
   price_eur: number;
+  rating?: number;
 }
 
 const useStyles = makeStyles({
@@ -24,9 +25,11 @@ const useStyles = makeStyles({
 });
 
 const Landing = () => {
-  const [hotels, setHotels] = useState<HotelData[]>([]);
+  // const [hotels, setHotels] = useState<HotelData[]>([]);
+  // const [availableHotels, setAvailableHotels] = useState<HotelData[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
-  const [availableHotels, setAvailableHotels] = useState<HotelData[]>([]);
+  const [state, setState] = useGlobalState();
+  const { hotels } = state;
 
   const classes = useStyles();
 
@@ -41,8 +44,7 @@ const Landing = () => {
     setTimeout(() => {
       getData().then((data) => {
         setLoading(false);
-        setAvailableHotels(data);
-        setHotels(data);
+        setState(data);
       });
     }, 1500);
   }, []);

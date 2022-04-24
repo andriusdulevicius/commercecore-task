@@ -1,4 +1,4 @@
-import { useState, useEffect, FC } from 'react';
+import { FC, useState, useEffect } from 'react';
 import HotelCard from './Reusables/HotelCard';
 import { makeStyles } from '@mui/styles';
 import { Box, Typography } from '@mui/material';
@@ -32,7 +32,7 @@ const HotelsList: FC<Props> = ({ hotels, loading }) => {
             return <HotelCard key={index} loading={loading} />;
           })
       ) : (
-        <Typography color={'error'}>
+        <Typography color={'error'} textAlign='center'>
           There are no hotels found based on your search phrase. Please try again.
         </Typography>
       )}
