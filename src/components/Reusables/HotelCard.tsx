@@ -1,16 +1,16 @@
 import { FC, useState } from 'react';
-import { HotelData } from '../../pages/Landing';
-import { Box, Typography, Link } from '@mui/material';
+import { HotelData } from '../../types';
+import { Box, Typography } from '@mui/material';
 import { ArrowRight, FavoriteBorderOutlined } from '@material-ui/icons';
 import { Image } from 'mui-image';
 import { makeStyles } from '@mui/styles';
 import PeriodSelector from './PeriodSelector';
 import { Ratings } from './Ratings';
 import { useGlobalState } from '../../context';
+import { Link } from 'react-router-dom';
 
 interface Props {
   hotel?: HotelData;
-  loading?: boolean;
 }
 
 const useStyles = makeStyles({
@@ -21,7 +21,6 @@ const useStyles = makeStyles({
     borderRadius: '1rem',
     overflow: 'hidden',
     padding: 0,
-    height: '15rem',
     backgroundColor: '#FFF',
   },
   favorite: {
@@ -35,12 +34,11 @@ const useStyles = makeStyles({
     backgroundColor: 'lightgray',
     cursor: 'pointer',
     transform: 'scale(1)',
-    transition: 'transform 1s ease',
+    transition: 'transform 0.2s ease-in-out',
     '&:active': {
-      transform: 'scale(1.2)',
+      transform: 'scale(1.1)',
     },
   },
-
   skeleton: {
     backgroundColor: '#EEE',
   },
@@ -63,14 +61,20 @@ const useStyles = makeStyles({
   blackText: {
     color: '#000',
   },
+  link: {
+    alignItems: 'center',
+    color: '#000',
+    textDecoration: 'none',
+  },
 });
 
-const HotelCard: FC<Props> = ({ hotel = {}, loading }) => {
-  const { name, address, city, country, image, price_eur, rating = 5 } = hotel;
+const HotelCard: FC<Props> = ({ hotel = {} }) => {
+  const { name, address, city, country, image, price_eur, rating = 5, favorite = false } = hotel;
   const classes = useStyles();
   const [period, setPeriod] = useState<string>('perNight');
-  const [favorite, setFavorite] = useState<boolean>(false);
   const [state, setState] = useGlobalState();
+  const [isFavorite, setIsFavorite] = useState<boolean>(favorite);
+  const { hotels, loading } = state;
 
   const getPrice = (period: string, price_eur: number) => {
     if (period === 'perWeek') {
@@ -80,24 +84,20 @@ const HotelCard: FC<Props> = ({ hotel = {}, loading }) => {
     } else return price_eur;
   };
 
-  const handleFavorites = async () => {
-    await setFavorite((prevState) => !prevState);
-    if (favorite) {
-      const newArr = [...state.favorites].push(hotel);
-      setState({ ...state, favorites: newArr });
-    }
-    if (!favorite) {
-      const newArr = state.favorites.map((favH: HotelData) => favH.name !== hotel.name);
-      setState({ ...state, favorites: newArr });
-    }
+  const handleFavorites = () => {
+    const newHotels = hotels.map((curr) => (curr.name === name ? { ...curr, favorite: !favorite } : curr));
+    setIsFavorite(!favorite);
+    setState({ ...state, hotels: newHotels });
   };
+
+  const seeDetailsLink = name ? '/' + name.toLowerCase().split(' ').slice(0, 2).join('-') : '/';
 
   return (
     <Box
       className={`${classes.card} ${loading && classes.skeleton}`}
       sx={{
         flexDirection: { xs: 'column', sm: 'row' },
-        height: 'auto',
+        minHeight: { xs: '28rem', sm: '15rem' },
       }}
     >
       {!loading && (
@@ -116,11 +116,7 @@ const HotelCard: FC<Props> = ({ hotel = {}, loading }) => {
             sx={{ right: { xs: '1rem', sm: '29rem', md: '43rem' } }}
             onClick={handleFavorites}
           >
-            {favorite ? (
-              <FavoriteBorderOutlined style={{ color: 'red' }} />
-            ) : (
-              <FavoriteBorderOutlined style={{ color: 'gray' }} />
-            )}
+            <FavoriteBorderOutlined style={{ color: isFavorite ? 'red' : 'gray' }} />
           </Box>
           <Box className={classes.textContainer} sx={{ padding: { xs: '1rem', sm: '2rem 2rem 1rem 2rem' } }}>
             <Typography variant='h5' fontSize='1.6rem'>
@@ -142,7 +138,8 @@ const HotelCard: FC<Props> = ({ hotel = {}, loading }) => {
                 </Typography>
                 <PeriodSelector period={period} setPeriod={setPeriod} />
               </Box>
-              <Link href='/' color='#000' underline='none' className={classes.flex} alignItems='center'>
+
+              <Link to={seeDetailsLink} className={classes.flex + ' ' + classes.link}>
                 <Typography variant='caption' style={{ textDecoration: 'none', fontSize: '1rem' }}>
                   See details
                 </Typography>

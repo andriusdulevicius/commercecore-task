@@ -6,4 +6,5 @@ export interface HotelData {
   image: string;
   price_eur: number;
   rating?: number;
+  favorite?: boolean;
 }

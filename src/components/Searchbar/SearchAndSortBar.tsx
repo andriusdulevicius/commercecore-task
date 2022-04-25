@@ -1,9 +1,8 @@
-import { useState, useEffect, FC } from 'react';
+import { FC } from 'react';
 import { makeStyles } from '@mui/styles';
-import { Box } from '@mui/material';
+import { Box, Select, InputLabel, MenuItem, FormControl } from '@mui/material';
 import SearchBar from 'material-ui-search-bar';
-import SortSelector from './SortSelector';
-import { HotelData } from 'pages/Landing';
+import { useGlobalState } from 'context';
 
 const useStyles = makeStyles({
   searchBox: {
@@ -14,58 +13,42 @@ const useStyles = makeStyles({
     width: '100%',
     maxWidth: '60rem',
   },
+  wrapper: {
+    minWidth: '10rem',
+    height: '100%',
+  },
+  formControl: {},
 });
 
-interface Props {
-  hotels: HotelData[];
-  setHotels: any;
-  availableHotels: HotelData[];
-}
-
-const SearchAndSortBar: FC<Props> = ({ hotels, setHotels, availableHotels }) => {
-  const [searched, setSearched] = useState<string>('');
-  const [selection, setSelection] = useState<string>('');
+const SearchAndSortBar: FC = () => {
   const classes = useStyles();
-
-  const sortHotelsBy = (hotels: HotelData[], sortBy: string) => {
-    if (sortBy === 'priceLowToHigh') {
-      return hotels.sort((a, b) => a.price_eur - b.price_eur);
-    } else if (sortBy === 'priceHighToLow') {
-      return hotels.sort((a, b) => b.price_eur - a.price_eur);
-    } else if (sortBy === 'nameAToZ') {
-      return hotels.sort((a, b) => (a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1));
-    } else if (sortBy === 'nameZToA') {
-      return hotels.sort((a, b) => (a.name.toLowerCase() < b.name.toLowerCase() ? 1 : -1));
-    } else return hotels;
-  };
-
-  useEffect(() => {
-    const sortedHotels = sortHotelsBy(hotels, selection);
-    setHotels([...sortedHotels]);
-  }, [selection]);
-
-  const requestSearch = (searchedVal: string) => {
-    const filteredHotels = availableHotels.filter((hotel) => {
-      return hotel.name.toLowerCase().includes(searchedVal.toLowerCase());
-    });
-    const sortedHotels = sortHotelsBy(filteredHotels, selection);
-    setHotels([...sortedHotels]);
-  };
+  const [state, setState] = useGlobalState();
+  const { query, filter = '' } = state;
 
   const cancelSearch = () => {
-    setSearched('');
-    requestSearch(searched);
+    setState({ ...state, query: '' });
   };
 
   return (
     <Box className={classes.searchBox} sx={{ gap: { sm: '1rem', md: '2rem' } }}>
       <SearchBar
         style={{ width: '70%' }}
-        value={searched}
-        onChange={(searchVal: string) => requestSearch(searchVal)}
+        value={query}
+        onChange={(searchVal: string) => setState({ ...state, query: searchVal })}
         onCancelSearch={() => cancelSearch()}
       />
-      <SortSelector selection={selection} setSelection={setSelection} />
+      <Box className={classes.wrapper}>
+        <FormControl className={classes.formControl} variant='standard' sx={{ m: 1, minWidth: 120 }}>
+          <InputLabel>Sort By:</InputLabel>
+          <Select id='selection' value={filter} onChange={(e) => setState({ ...state, filter: e.target.value })}>
+            <MenuItem value=''></MenuItem>
+            <MenuItem value='priceLowToHigh'>Price (low to high)</MenuItem>
+            <MenuItem value='priceHighToLow'>Price (high to low)</MenuItem>
+            <MenuItem value='nameAToZ'>Name (A to Z)</MenuItem>
+            <MenuItem value='nameZToA'>Name (Z to A)</MenuItem>
+          </Select>
+        </FormControl>
+      </Box>
     </Box>
   );
 };

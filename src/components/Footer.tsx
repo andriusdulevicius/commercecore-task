@@ -28,7 +28,7 @@ const useStyles = makeStyles({
   },
 });
 
-export const Footer: FC = () => {
+const Footer: FC = () => {
   const classes = useStyles();
 
   const scrollToTop = () => {
@@ -58,3 +58,5 @@ export const Footer: FC = () => {
     </Box>
   );
 };
+
+export default Footer;
