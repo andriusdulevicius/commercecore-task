@@ -2,25 +2,13 @@ import React from 'react';
 import { Box } from '@mui/material';
 import { Star } from '@material-ui/icons';
 import { makeStyles } from '@mui/styles';
+import { Theme } from '../../types';
 
 interface Props {
   rating: number;
 }
 
-const useStyles = makeStyles({
-  starContainer: {
-    alignItems: 'center',
-    flexWrap: 'nowrap',
-    gap: '0.1rem',
-    margin: '0.4rem 0',
-    padding: '0.2rem',
-    height: '1.9rem',
-    backgroundColor: 'orange',
-    borderRadius: '0.5rem',
-  },
-});
-
-export const Ratings: React.FC<Props> = ({ rating }) => {
+const Ratings: React.FC<Props> = ({ rating }) => {
   const classes = useStyles();
 
   const starsWidth: string = rating * 1.6 + 'rem';
@@ -35,3 +23,19 @@ export const Ratings: React.FC<Props> = ({ rating }) => {
     </Box>
   );
 };
+
+export default Ratings;
+
+const useStyles = makeStyles((theme: Theme) => ({
+  starContainer: {
+    alignItems: 'center',
+    flexWrap: 'nowrap',
+    gap: '0.1rem',
+    margin: '0.4rem 0',
+    padding: '0.2rem',
+    height: '1.9rem',
+    backgroundColor: theme.palette.warning.main,
+    color: theme.palette.secondary.light,
+    borderRadius: '0.5rem',
+  },
+}));

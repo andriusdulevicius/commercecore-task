@@ -4,15 +4,6 @@ import { Box } from '@mui/material';
 import HotelsList from '../components/HotelsList';
 import SearchAndSortBar from 'components/Searchbar/SearchAndSortBar';
 
-const useStyles = makeStyles({
-  main: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    padding: '1rem',
-  },
-});
-
 const Landing: FC = () => {
   const classes = useStyles();
 
@@ -27,3 +18,12 @@ const Landing: FC = () => {
 };
 
 export default Landing;
+
+const useStyles = makeStyles({
+  main: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    padding: '1rem',
+  },
+});

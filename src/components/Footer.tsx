@@ -1,32 +1,8 @@
 import { FC } from 'react';
+import { makeStyles } from '@mui/styles';
 import { Box, Typography } from '@mui/material';
 import { ArrowUpwardOutlined } from '@material-ui/icons';
-
-import { makeStyles } from '@mui/styles';
-
-const useStyles = makeStyles({
-  footer: {
-    width: '100%',
-    backgroundColor: 'lightgray',
-    height: '5.5rem',
-  },
-  footerText: {
-    display: 'flex',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    gap: '1rem',
-    color: 'gray',
-    height: '100%',
-    maxWidth: '70rem',
-    margin: '0 auto',
-  },
-  backToTop: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    cursor: 'pointer',
-  },
-});
+import { Theme } from '../types';
 
 const Footer: FC = () => {
   const classes = useStyles();
@@ -60,3 +36,27 @@ const Footer: FC = () => {
 };
 
 export default Footer;
+
+const useStyles = makeStyles((theme: Theme) => ({
+  footer: {
+    width: '100%',
+    backgroundColor: theme.palette.secondary.main,
+    height: '5.5rem',
+  },
+  footerText: {
+    display: 'flex',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    gap: '1rem',
+    color: theme.palette.primary.light,
+    height: '100%',
+    maxWidth: '70rem',
+    margin: '0 auto',
+  },
+  backToTop: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    cursor: 'pointer',
+  },
+}));

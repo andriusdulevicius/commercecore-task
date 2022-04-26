@@ -1,11 +1,42 @@
 import { FC } from 'react';
-import { Box, Typography } from '@mui/material';
 import { makeStyles } from '@mui/styles';
+import { Box, Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
 import CustomButton from './Reusables/CustomButton';
+import { Theme } from '../types';
 
-const useStyles = makeStyles({
+const Header: FC = () => {
+  const classes = useStyles();
+
+  return (
+    <>
+      <Box className={classes.hero}>
+        <Box className={classes.container} sx={{ padding: { md: '2rem 0' } }}>
+          <Typography
+            variant='h4'
+            sx={{
+              fontSize: {
+                xs: '1.5rem',
+                md: '2.2rem',
+              },
+            }}
+          >
+            <Link to='/' className={classes.link}>
+              FIND YOUR STAY
+            </Link>
+          </Typography>
+          <CustomButton path='/favorites' text='Favorites' backgroundColor='#FFA500' />
+        </Box>
+      </Box>
+    </>
+  );
+};
+
+export default Header;
+
+const useStyles = makeStyles((theme: Theme) => ({
   hero: {
-    background: '#f3b963cf',
+    background: theme.palette.warning.light,
     width: '100%',
     height: '6rem',
   },
@@ -17,34 +48,9 @@ const useStyles = makeStyles({
     alignItems: 'center',
     padding: '2rem 1rem',
     margin: '0 auto',
-    color: '#FFF',
   },
-});
-
-const Header: FC = () => {
-  const classes = useStyles();
-
-  return (
-    <>
-      <Box className={classes.hero}>
-        <Box className={classes.container} sx={{ padding: { md: '2rem 0' } }}>
-          <Typography
-            variant={'h4'}
-            component='div'
-            sx={{
-              fontSize: {
-                xs: '1.5rem',
-                md: '2.2rem',
-              },
-            }}
-          >
-            FIND YOUR STAY
-          </Typography>
-          <CustomButton path='/favorites' text='Favorites' backgroundColor='orange' />
-        </Box>
-      </Box>
-    </>
-  );
-};
-
-export default Header;
+  link: {
+    textDecoration: 'none',
+    color: theme.palette.secondary.light,
+  },
+}));

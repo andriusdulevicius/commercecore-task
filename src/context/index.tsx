@@ -27,6 +27,8 @@ export const GlobalContext = createContext<GlobalContextType>([initialState, () 
 const GlobalProvider: FC<Props> = ({ children }) => {
   const [state, setState] = useState<State>(initialState);
 
+  // Since fetching from local .json file, I set timeout to mock a pause usually caused by fetching from outside DB, so I could implement skeleton cards in my project
+
   // SET INITIAL STATE
   useEffect(() => {
     const globalLocalStorage = localStorage?.getItem('globalState');

@@ -7,20 +7,12 @@ interface Props {
   setSelection: (value: string) => void;
 }
 
-const useStyles = makeStyles({
-  wrapper: {
-    minWidth: '10rem',
-    height: '100%',
-  },
-  formControl: {},
-});
-
 const SortSelector: FC<Props> = ({ selection, setSelection }) => {
   const classes = useStyles();
 
   return (
     <Box className={classes.wrapper}>
-      <FormControl className={classes.formControl} variant='standard' sx={{ m: 1, minWidth: 120 }}>
+      <FormControl variant='standard' sx={{ m: 1, minWidth: 120 }}>
         <InputLabel>Sort By:</InputLabel>
         <Select id='selection' value={selection} onChange={(e) => setSelection(e.target.value)}>
           <MenuItem value=''></MenuItem>
@@ -35,3 +27,10 @@ const SortSelector: FC<Props> = ({ selection, setSelection }) => {
 };
 
 export default SortSelector;
+
+const useStyles = makeStyles({
+  wrapper: {
+    minWidth: '10rem',
+    height: '100%',
+  },
+});

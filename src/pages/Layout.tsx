@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { useGlobalState } from 'context';
 import Landing from 'pages/Landing';
 import FavoriteHotels from 'pages/FavoriteHotels';
 import Hotel from 'pages/Hotel';
-import { useGlobalState } from 'context';
 
 const Layout: FC = () => {
   const [{ hotels }] = useGlobalState();

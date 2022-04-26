@@ -4,22 +4,6 @@ import { Box, Select, InputLabel, MenuItem, FormControl } from '@mui/material';
 import SearchBar from 'material-ui-search-bar';
 import { useGlobalState } from 'context';
 
-const useStyles = makeStyles({
-  searchBox: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexWrap: 'nowrap',
-    width: '100%',
-    maxWidth: '60rem',
-  },
-  wrapper: {
-    minWidth: '10rem',
-    height: '100%',
-  },
-  formControl: {},
-});
-
 const SearchAndSortBar: FC = () => {
   const classes = useStyles();
   const [state, setState] = useGlobalState();
@@ -38,7 +22,7 @@ const SearchAndSortBar: FC = () => {
         onCancelSearch={() => cancelSearch()}
       />
       <Box className={classes.wrapper}>
-        <FormControl className={classes.formControl} variant='standard' sx={{ m: 1, minWidth: 120 }}>
+        <FormControl variant='standard' sx={{ m: 1, minWidth: 120 }}>
           <InputLabel>Sort By:</InputLabel>
           <Select id='selection' value={filter} onChange={(e) => setState({ ...state, filter: e.target.value })}>
             <MenuItem value=''></MenuItem>
@@ -54,3 +38,18 @@ const SearchAndSortBar: FC = () => {
 };
 
 export default SearchAndSortBar;
+
+const useStyles = makeStyles({
+  searchBox: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexWrap: 'nowrap',
+    width: '100%',
+    maxWidth: '60rem',
+  },
+  wrapper: {
+    minWidth: '10rem',
+    height: '100%',
+  },
+});
